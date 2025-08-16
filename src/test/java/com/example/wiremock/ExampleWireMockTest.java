@@ -9,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.web.client.RestClient;
-import org.wiremock.spring.ConfigureWireMock;
 import org.wiremock.spring.EnableWireMock;
 import org.wiremock.spring.InjectWireMock;
 
@@ -85,11 +84,7 @@ class ExampleWireMockTest {
     }
 
     @Test
-    void testStaticMapping() throws Exception {
-        StubMapping sm1 = stubFor(get(urlEqualTo("/users/1"))
-                .willReturn(aResponse()
-                        .withHeader("Content-Type", "application/json")
-                        .withBody("{\"name\":\"Jenna\",\"id\":1}")));
+    void testStaticMapping() {
 
         User user = restClient.get()
                 .uri("/users/1")
@@ -98,6 +93,6 @@ class ExampleWireMockTest {
                 .getBody();
 
         assertThat(user.getName()).isEqualTo("Jenna");
-        assertThat(user.getId()).isEqualTo(2);
+        assertThat(user.getId()).isEqualTo(1);
     }
 }
