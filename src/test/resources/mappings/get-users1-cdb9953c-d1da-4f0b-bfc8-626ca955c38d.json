@@ -1,0 +1,17 @@
+{
+  "id" : "cdb9953c-d1da-4f0b-bfc8-626ca955c38d",
+  "request" : {
+    "url" : "/users/1",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"name\":\"Jenna\",\"id\":1}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    }
+  },
+  "uuid" : "cdb9953c-d1da-4f0b-bfc8-626ca955c38d",
+  "persistent" : true,
+  "insertionIndex" : 0
+}
